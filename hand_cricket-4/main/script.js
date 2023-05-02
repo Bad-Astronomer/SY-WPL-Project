@@ -67,7 +67,7 @@ function bat_score(){
             document.getElementById("score-value").innerHTML = "OUT";
             document.getElementById("target").innerText = score_player + 1;
             document.getElementById("status").innerText = "Balling";
-            transition("Second Inning", "Balling");
+            transition("SECOND INNING", "BALLING");
         }
 
         out();
@@ -90,7 +90,7 @@ function ball_score(){
     }
     else{
         document.getElementById("score-value").innerHTML = "OUT";
-        over_score[balls % over_score.length] = "X";
+        over_score[balls % over_score.length] = "X";``
         update_over();
 
         //! RESET
@@ -103,7 +103,7 @@ function ball_score(){
             document.getElementById("score-value").innerHTML = "OUT";
             document.getElementById("target").innerText = score_bot + 1;
             document.getElementById("status").innerText = "Batting";
-            transition("Second Inning", "Batting");
+            transition("SECOND INNING", "BATTING");
         }
  
         out();
@@ -161,6 +161,7 @@ function transition(number, value, duration = 2){
 function shake(){
     var iter = 0;
     player_input = 0;
+
     left.className = "og shake_left";
     left.style.pointerEvents = "none";
     right.className = "og shake_right";
@@ -248,11 +249,11 @@ function shake(){
 function main(){
     inning = 1;
     if(batting){
-        transition("First Inning", "Batting");
+        transition("FIRST INNING", "BATTING");
         document.getElementById("status").innerText = "Batting";
     }
     else{
-        transition("First Inning", "Balling");
+        transition("FIRST INNING", "BATTING");
         document.getElementById("status").innerText = "Balling";
     }
 
@@ -280,4 +281,3 @@ function start(option){
     document.getElementById("game-container").style.display = "inline";
     main();
 }
-
