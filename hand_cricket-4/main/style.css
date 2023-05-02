@@ -12,7 +12,12 @@ body{
 .container{
     height: 100vh;
     width: 100vw;
-    background: linear-gradient(black, rgb(0, 0, 32));
+    /* background: linear-gradient(black, rgb(0, 0, 32)); */
+    background: url("./assets/cricket_background_2.jfif");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    backdrop-filter: blur(5px);
 }
 
 /*! toss */
@@ -21,14 +26,15 @@ body{
     height: 100vh;
     width: 100vw;
     background-color: black;
-    transition: scale 200ms ease-in;
+    transition: transform 200ms ease-in;
+    transform-origin: 50% 55vh;
 }
 
 #coin{
     position: absolute;
     inset: 60vh 50vw;
     translate: -50% -50%;
-    height: 100px;
+    height: clamp(5em, 15vh, 25em);
     aspect-ratio: 1;
     border-radius: 50%;
     background-color: gold;
@@ -60,10 +66,10 @@ body{
     cursor: pointer;
 }
 .choice:nth-child(odd){
-    left: 25vw;
+    left: calc(50vw - 250px);
 }
 .choice:nth-child(even){
-    right: 25vw;
+    right: calc(50vw - 250px);
 }
 .choice:nth-child(5), .choice:nth-child(6){
     scale: 0;
@@ -159,7 +165,7 @@ body{
     position: absolute;
     top: 55vh;
     width: 100%;
-    background-color: rgba(32, 32, 32, 0.75);
+    background-color: rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(10px);
     height: clamp(5em, 25vw, 25em);
     translate: 0 -50%;
@@ -189,16 +195,10 @@ body{
     scale: 0 1;
 }
 
-.instructions{
-    font-size: clamp(0.7em, 2vw, 1em);
-    position: absolute;
-    bottom: 1vh;
-    margin-left: 20px;
-    color: #00b300;
-}
-
 #top-bar{
-    background-color: rgb(20, 20, 20);
+    /* background-color: rgb(20, 20, 20); */
+    backdrop-filter: blur(5px);
+    background-color: rgba(0, 0, 0, 0.2);
     height: clamp(10em, 25vw, 12em);
     min-height: fit-content;
     display: flex;
