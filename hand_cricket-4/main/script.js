@@ -111,15 +111,32 @@ function ball_score(){
 }
 
 function result(){
+    var win_loss = 999
     if(score_player > score_bot){
         transition("Player", "Wins", Infinity);
+        win_loss = 1;
     }
     else if(score_player == score_bot){
         transition("Match", "Draw", Infinity);
+        win_loss = 0;
     }
     else{
         transition("Bot", "Wins", Infinity)
+        win_loss = -1;
     }
+
+    var data = { 
+        outcome: win_loss,
+        score: score_player,
+    };
+
+    fetch('display.php', {
+        method: 'POST',
+        body: JSON.stringify(data)
+    })
+    .then(response => response.text())
+    .then(data => console.log(data))
+    .catch(error => console.error(error));
 }
 
 function transition(number, value, duration = 2){
@@ -263,3 +280,4 @@ function start(option){
     document.getElementById("game-container").style.display = "inline";
     main();
 }
+

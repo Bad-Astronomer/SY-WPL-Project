@@ -12,10 +12,9 @@ const observer = new IntersectionObserver((entries) => {
 
 // Display Logic
 const high_score = document.getElementById("high-score");
-
-const scores = [50, 150, 250, 450, 50, 350, 100];
-const records = ["WIN", "LOSS", "WIN", "LOSS", "LOSS", "WIN", "WIN"];
-
+setTimeout(() => {
+    console.log(scores, records);
+}, 5000);
 let div_list = [];
 
 const entrybox = document.getElementById("entrybox");
