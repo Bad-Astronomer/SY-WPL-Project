@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500&display=swap');
+
+body{
+    background: url(./assets/cricket_background_2.jfif);
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow-y: hidden;
+    height: 100vh;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Chakra Petch', sans-serif;
+    color: white;
+}
+
+:root{
+    --border: 1px solid rgba(255,255,255,0.5) ;
+    --container-color: rgba(0, 0, 0, 0.2);
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.form-box,.signupform-box{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    min-height: 100%;
+    align-items: center;
+    border: var(--border);
+    font-size: 1rem;
+    text-align: center;
+    height: 75%;
+    padding: clamp(1.5em,15vh,4em) clamp(2em,10vw,5em);
+    backdrop-filter: blur(10px);
+    transition: all 200ms ease-in;
+    scale: 1.25;
+    box-shadow: 2px 2px rgba(255,255,255,0.5);
+}
+
+.form-box{
+    position: relative;
+    top: 50vh;
+    translate: 0 -50%;
+}
+
+.form-value h2{
+    margin-bottom: 10px;
+    font-size: 1.75em;
+}
+
+input[type=password],input[type=email],input[type=text]{
+    border: var(--border);
+    background-color: var(--container-color);
+    position: relative;
+    width: 100%;
+    margin: 10px 0;
+    width: 100%;
+    padding: 10px 10px;
+    /* font-size: clamp(0.5em, 2vw, 1.1em); */
+    color: white;
+}   
+
+button{
+    isolation: isolate;
+    padding: 10px 25px;
+    width: 100%;
+    background-color: rgba(200, 200, 200, 0.1);
+    border: var(--border);
+    cursor: pointer;
+    position: relative;
+    font-size: 1em;
+    font-weight: bold;
+    margin: 15px;
+}
+
+button:before{
+    z-index: -1;
+    content: "";
+    background-color: white;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    inset: 0 0;
+    transform-origin: bottom;
+    transform: scaleY(0);
+    transition: all 200ms ease-out;
+}
+
+#play:before{
+    background-color: rgb(1, 255, 1);
+}
+#logout:before{
+    background-color: red;
+}
+#logout:hover{
+    color: white;
+}
+
+button:hover::before{
+    transform: scaleY(1);
+}
+button:hover{
+    color: black;
+}
+
+.HC-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
