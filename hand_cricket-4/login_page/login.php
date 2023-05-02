@@ -21,22 +21,3 @@
 </body>
 </html>
 
-<?php
-  $servername = "localhost";
-  $username = "root";
-  $password = "";
-  $dbname = "hand_cricket";
-
-  $conn = mysqli_connect($servername, $username, $password, $dbname);
-
-  $get_usrnm = $_POST["usrnm"];
-  $get_password = $_POST["pwd"];
-
-  $query = mysqli_prepare($conn, "INSERT INTO user VALUES(?, ?, ?)");
-  mysqli_stmt_bind_param($query, "ssi", $get_usrnm, $get_password, '0');
-
-  mysqli_stmt_execute($query);
-
-  mysqli_stmt_close($query);
-  mysqli_close($conn);
-?>
